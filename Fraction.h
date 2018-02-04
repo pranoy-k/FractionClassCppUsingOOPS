@@ -16,8 +16,8 @@ INcluding the header files
 
 **/
 
-// #ifndef _FRACTION_H_
-// #define _FRACTION_H_
+#ifndef _FRACTION_H_
+#define _FRACTION_H_
 
 /*--------------*/
 /* DEFINES */
@@ -70,4 +70,4 @@ public:
 
 };
 
-// #endif
+#endif
