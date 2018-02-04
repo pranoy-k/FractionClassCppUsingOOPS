@@ -12,14 +12,14 @@
 **Dependencies**: gcc compiler C++ 11
 Headers Include : #include <cmath> <string> <exception> <algorithm> <vector> <unordered_map> <utility>
 
-Compilation Command:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction.out
+**Compilation Command**:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction.out
 Run Command: ./Fraction.out
 
-Sample Output: Pasted Below
+**Sample Output**: Pasted Below
 
 -------------------------------------------------------------
 
-What fractions do you want to operate on?
+*What fractions do you want to operate on?
 
 Enter 1 number
 Enter the Numerator:: 3
@@ -40,4 +40,4 @@ Do you wish to continue (Y or N):: Y
 
 -------------------------------------------------------------
 
-What fractions do you want to operate on?
+What fractions do you want to operate on?*
