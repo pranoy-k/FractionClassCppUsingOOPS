@@ -13,7 +13,8 @@
 Headers Include : #include <cmath> <string> <exception> <algorithm> <vector> <unordered_map> <utility>
 
 **Compilation Command**:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction.out
-Run Command: ./Fraction.out
+
+**Run Command**: ./Fraction.out
 
 **Sample Output**: Pasted Below
 
