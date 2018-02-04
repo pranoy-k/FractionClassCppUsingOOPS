@@ -21,22 +21,22 @@ Run Command: ./Fraction.out
 
 *What fractions do you want to operate on?*
 
-Enter 1 number
-Enter the Numerator:: 3
-Enter the Denominator:: 5
-The Fraction you entered is a : 3/5
+*Enter 1 number*
+*Enter the Numerator:: 3*
+*Enter the Denominator:: 5*
+*The Fraction you entered is a : 3/5*
 
-Enter 2 number
-Enter the Numerator:: 6
-Enter the Denominator:: -9
-The Fraction you entered is b : -2/3
+*Enter 2 number*
+*Enter the Numerator:: 6*
+*Enter the Denominator:: -9*
+*The Fraction you entered is b : -2/3*
 
-Operation to perform include (+ - * / == != > < >= <=) 
-Select one of these :: -
+*Operation to perform include (+ - * / == != > < >= <=)*
+*Select one of these :: -*
 
-3/5 - -2/3 = 19/15
+*3/5 - -2/3 = 19/15*
 
-Do you wish to continue (Y or N):: Y
+*Do you wish to continue (Y or N):: Y*
 
 -------------------------------------------------------------
 
