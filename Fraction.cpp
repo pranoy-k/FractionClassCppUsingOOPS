@@ -15,34 +15,10 @@ unordered_map< string, int> operator_map
                       {">=",9},{"<=",10}
                        } ;
 
-pair<int,int> receiveInput(int n)
-{
-      int num, den;
-      cout << endl << "Enter "<< n <<" number";
-      cout << endl << "Enter the Numerator:: ";
-      cin >> num;
-      while (!cin.good())
-      {
-         cin.clear();
-         cin.ignore(INT_MAX, '\n');
-         cout << endl << "Enter a valid Integer.. Try Again";
-         cout << endl << "Enter the Numerator:: ";
-         cin >> num;
-      }
-      cout << "Enter the Denominator:: ";
-      cin >> den;
-      while (!cin.good())
-      {
-         cin.clear();
-         cin.ignore(INT_MAX, '\n');
-         cout << endl << "Enter a valid Integer.. Try Again";
-         cout << endl << "Enter the Denominator:: ";
-         cin >> den;
-      }
-
-      return make_pair(num,den);
-}
-
+unordered_map<int, string> number_map
+                      {{1,"First"},
+                       {2,"Second"}
+                      } ;
 
 int Fraction::gcd(int a , int b)
 {
@@ -82,6 +58,11 @@ Fraction::Fraction(int num, int den)
       this->numerator = 0;
       this->denominator = 1;
    }
+}
+
+pair<int,int> Fraction::getFraction()
+{
+   return make_pair(this->numerator,this->denominator);
 }
 
 Fraction Fraction::operator+ (Fraction b)
@@ -156,9 +137,15 @@ bool Fraction::operator>= (Fraction b)
    return result >= 0;
 }
 
-ostream& operator<<(ostream& os, const Fraction& m) {
+string Fraction::returnFractionAsString ()
+{
+   string temp = to_string(this->numerator) + "/" + to_string(this->denominator);
+   return temp;
+}
 
-   os << m.numerator << "/" << m.denominator ;
+ostream& operator<<(ostream& os, Fraction& m) 
+{
+   os << m.returnFractionAsString() ;
    return os;
 }
 
