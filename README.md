@@ -12,9 +12,9 @@
 **Dependencies**: gcc compiler C++ 11
 Headers Include : #include <cmath> <string> <exception> <algorithm> <vector> <unordered_map> <utility>
 
-**Compilation Command**:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction.out
+> #### **Compilation Command**:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction
 
-**Run Command**: ./Fraction.out
+**Run Command**: ./Fraction
 
 **Sample Output**: Pasted Below
 
