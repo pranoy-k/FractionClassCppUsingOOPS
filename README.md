@@ -19,7 +19,7 @@ Run Command: ./Fraction.out
 
 -------------------------------------------------------------
 
-*What fractions do you want to operate on?
+*What fractions do you want to operate on?*
 
 Enter 1 number
 Enter the Numerator:: 3
@@ -40,4 +40,4 @@ Do you wish to continue (Y or N):: Y
 
 -------------------------------------------------------------
 
-What fractions do you want to operate on?*
+*What fractions do you want to operate on?*
