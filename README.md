@@ -10,11 +10,12 @@
 **Description**: Defining a C++ Fraction Class. It has support for addition, subtraction, multiplication, division, greater than, greater than or equals, less than, less than or equals, cout. Everything is implemented using operator overloading for the benefit of ease of use for the user.
 
 **Dependencies**: gcc compiler C++ 11
-Headers Include : #include <cmath> <string> <exception> <algorithm> <vector> <unordered_map> <utility>
+Headers Include : #include <cmath> <string> <exception> <algorithm> <vector> <unordered_map> <utility> <limits.h>
 
-> #### **Compilation Command**:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction
+### **Compilation Command**:  g++ -std=c++11 main.cpp Fraction.cpp -o Fraction
 
-**Run Command**: ./Fraction
+**Run Command**: ./Fraction 
+> Note: To play around try using Fraction for Mac users and Fraction.exe for windows users
 
 **Sample Output**: Pasted Below
 
