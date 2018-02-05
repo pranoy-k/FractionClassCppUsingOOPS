@@ -7,6 +7,9 @@
  */
 #include "Fraction.h"
 
+/*
+Mapping for different Operands to number for switch case
+*/
 unordered_map< string, int> operator_map
                       {{"+",1},{"-",2}, 
                       {"*",3},{"/",4}, 
@@ -14,12 +17,18 @@ unordered_map< string, int> operator_map
                       {">",7},{"<",8}, 
                       {">=",9},{"<=",10}
                        } ;
-
+/*
+Mapping from number to Strings
+*/
 unordered_map<int, string> number_map
                       {{1,"First"},
                        {2,"Second"}
                       } ;
 
+/*
+Private function for calculating GCD for expressing 
+numerator/denominator in simplest form
+*/
 int Fraction::gcd(int a , int b)
 {
    if (a == 0 || b == 0)
@@ -31,12 +40,15 @@ int Fraction::gcd(int a , int b)
    return gcd(a, b-a);
 }
 
+/*
+Constructor with default values
+*/
 Fraction::Fraction()
 {
    this->numerator = 0;
    this->denominator = 1;
 }
-
+/*Constructor with arguments*/
 Fraction::Fraction(int num, int den) 
 {
 
@@ -57,11 +69,7 @@ Fraction::Fraction(int num, int den)
    }
 }
 
-pair<int,int> Fraction::getFraction()
-{
-   return make_pair(this->numerator,this->denominator);
-}
-
+/*Operator overloading for adding two fractions*/
 Fraction Fraction::operator+ (Fraction b)
 {
 
@@ -72,6 +80,7 @@ Fraction Fraction::operator+ (Fraction b)
    return result;
 }
 
+/*Operator overloading for subracting two fractions*/
 Fraction Fraction::operator- (Fraction b)
 {
 
@@ -81,6 +90,8 @@ Fraction Fraction::operator- (Fraction b)
    
    return result;
 }
+
+/*Operator overloading for multiplying two fractions*/
 Fraction Fraction::operator* (Fraction b)
 {
 
@@ -90,6 +101,8 @@ Fraction Fraction::operator* (Fraction b)
    
    return result;
 }
+
+/*Operator overloading for dividing two fractions*/
 Fraction Fraction::operator/ (Fraction b)
 {
 
@@ -100,46 +113,54 @@ Fraction Fraction::operator/ (Fraction b)
    return result;
 }
 
+/*Operator overloading for comparing two fractions*/
 bool Fraction::operator== (Fraction b)
 {
    return ((this->numerator == b.numerator) && (this->denominator == b.denominator));
 }
 
+/*Operator overloading for comparing two fractions*/
 bool Fraction::operator!= (Fraction b)
 {
    return ((this->numerator != b.numerator) || (this->denominator != b.denominator));
 }
 
+/*Operator overloading for comparing two fractions*/
 bool Fraction::operator< (Fraction b)
 {
    float result = (this->numerator*b.denominator) - (this->denominator*b.numerator);
    return result < 0;
 }
 
+/*Operator overloading for comparing two fractions*/
 bool Fraction::operator> (Fraction b)
 {
    float result = (this->numerator*b.denominator) - (this->denominator*b.numerator);
    return result > 0;
 }
 
+/*Operator overloading for comparing two fractions*/
 bool Fraction::operator<= (Fraction b)
 {
    float result = (this->numerator*b.denominator) - (this->denominator*b.numerator);
    return result <= 0;
 }
 
+/*Operator overloading for comparing two fractions*/
 bool Fraction::operator>= (Fraction b)
 {
    float result = (this->numerator*b.denominator) - (this->denominator*b.numerator);
    return result >= 0;
 }
 
+/*Function for displaying fraction as a string*/
 string Fraction::returnFractionAsString ()
 {
    string temp = to_string(this->numerator) + "/" + to_string(this->denominator);
    return temp;
 }
 
+/*Function for testing valid fraction input*/
 bool Fraction::validFractionInput(string str)
 {
    size_t pos = str.find("/");
@@ -161,6 +182,8 @@ bool Fraction::validFractionInput(string str)
     }
     return true;
 }
+
+/*Function for converting String To Fraction*/
 void Fraction::convertStringToFraction(string str)
 {
    size_t pos = str.find("/");
@@ -193,12 +216,14 @@ void Fraction::convertStringToFraction(string str)
    return;
 }
 
+/*Operator overloading for Outputing fraction*/
 ostream& operator<<(ostream& os, Fraction& m) 
 {
    os << m.returnFractionAsString() ;
    return os;
 }
 
+/*Operator overloading for Inputing fraction*/
 istream& operator>>(istream& is, Fraction& m)
 {
    string inp;

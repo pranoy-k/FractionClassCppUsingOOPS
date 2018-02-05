@@ -44,7 +44,11 @@ using namespace std;
 
 extern unordered_map<string,int> operator_map;
 extern unordered_map<int, string> number_map;
-
+/*
+API for Fraction Class
+Operator overloading supported for input/output
+and various binary and arithmetic operations
+*/
 class Fraction
 {
 
@@ -56,7 +60,6 @@ private:
 public:
    Fraction();
    Fraction(int num, int den);
-   pair<int,int> getFraction();
    Fraction operator+ (Fraction );
    Fraction operator- (Fraction );
    Fraction operator* (Fraction );
@@ -67,9 +70,9 @@ public:
    bool operator> (Fraction );
    bool operator<= (Fraction );
    bool operator>= (Fraction );
+   string returnFractionAsString ();
    bool validFractionInput(string);
    void convertStringToFraction(string);
-   string returnFractionAsString ();
    
 
 };
