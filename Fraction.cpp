@@ -151,12 +151,12 @@ bool Fraction::validFractionInput(string str)
 
     for(int i = 0; i < first.size(); i++)
     {
-      if(!isdigit(first[i]))
+      if(!isdigit(first[i]) && first[i] != '-')
          return false;
     }
     for(int i = 0; i < second.size(); i++)
     {
-      if(!isdigit(second[i]))
+      if(!isdigit(second[i]) && second[i] != '-')
          return false;
     }
     return true;

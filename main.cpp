@@ -24,6 +24,7 @@ int main()
       {
          
          cout << endl << "Enter "<< number_map[1] <<" number";
+         receiveInput = true;
          while(receiveInput)
          {
             cout << endl << "Enter the Number in the form a/b ::  ";
@@ -41,11 +42,13 @@ int main()
       }
       else
          a = c;
+      continueWithAnswer = false;
 
-      cout << "The First Fraction is a : " << a << endl;
+      cout << "The First Fraction is a/b : " << a << endl;
       receiveInput = true;
 
       cout << endl << "Enter "<< number_map[2] <<" number";
+      receiveInput = true;
       while(receiveInput)
       {
          cout << endl << "Enter the Number in the form a/b ::  ";
@@ -118,7 +121,7 @@ int main()
       {
          if(oper <= 4 && oper >=1 )
          {
-            cout << endl << "Do you wish to continue with the Answer? (Y or N):: ";
+            cout << endl << "Do you wish to continue operating with the Answer? (Y or N):: ";
             cin>>contin;
             if(contin == 'Y' || contin == 'y')
                continueWithAnswer = true;
