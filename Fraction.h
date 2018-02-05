@@ -74,7 +74,6 @@ public:
    bool validFractionInput(string);
    void convertStringToFraction(string);
    
-
 };
 
 ostream& operator<<(ostream& os, Fraction& m);
