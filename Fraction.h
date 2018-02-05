@@ -57,22 +57,24 @@ public:
    Fraction();
    Fraction(int num, int den);
    pair<int,int> getFraction();
-   Fraction operator+ (Fraction b);
-   Fraction operator- (Fraction b);
-   Fraction operator* (Fraction b);
-   Fraction operator/ (Fraction b);
-   bool operator== (Fraction b);
-   bool operator!= (Fraction b);
-   bool operator< (Fraction b);
-   bool operator> (Fraction b);
-   bool operator<= (Fraction b);
-   bool operator>= (Fraction b);
-   
+   Fraction operator+ (Fraction );
+   Fraction operator- (Fraction );
+   Fraction operator* (Fraction );
+   Fraction operator/ (Fraction );
+   bool operator== (Fraction );
+   bool operator!= (Fraction );
+   bool operator< (Fraction );
+   bool operator> (Fraction );
+   bool operator<= (Fraction );
+   bool operator>= (Fraction );
+   bool validFractionInput(string);
+   void convertStringToFraction(string);
    string returnFractionAsString ();
-   // void display ();
+   
 
 };
 
 ostream& operator<<(ostream& os, Fraction& m);
+istream& operator>>(istream& is, Fraction& m);
 
 #endif

@@ -39,10 +39,7 @@ Fraction::Fraction()
 
 Fraction::Fraction(int num, int den) 
 {
-   if(den == 0)
-   {
-      throw runtime_error("\nWrong Input!!!!!!!!!\n\nTry Again\n");
-   }
+
    if(num != 0)
    {
       this->numerator = num/gcd(abs(num),abs(den));
@@ -143,9 +140,79 @@ string Fraction::returnFractionAsString ()
    return temp;
 }
 
+bool Fraction::validFractionInput(string str)
+{
+   size_t pos = str.find("/");
+   if (pos==string::npos)
+      return false;
+
+   string first = str.substr(0, pos);
+   string second = str.substr(pos + 1);
+
+    for(int i = 0; i < first.size(); i++)
+    {
+      if(!isdigit(first[i]))
+         return false;
+    }
+    for(int i = 0; i < second.size(); i++)
+    {
+      if(!isdigit(second[i]))
+         return false;
+    }
+    return true;
+}
+void Fraction::convertStringToFraction(string str)
+{
+   size_t pos = str.find("/");
+
+   int num = atoi(str.substr(0, pos).c_str());
+   int den =  atoi(str.substr(pos + 1).c_str());
+
+   if(den == 0)
+   
+   {
+      throw runtime_error("Enter Valid Fraction!\nPlease enter a fraction of type p/q, where p and q are integers\nKeep in mind denominator cannot be zero.");
+   }
+   
+   if(num != 0)
+   {
+      this->numerator = num/gcd(abs(num),abs(den));
+      this->denominator = den/gcd(abs(num),abs(den));
+      if(den < 0)
+      {
+         this->numerator*=-1;
+         this->denominator*=-1;
+      }
+   }
+    else
+   {
+      this->numerator = 0;
+      this->denominator = 1;
+   }
+
+   return;
+}
+
 ostream& operator<<(ostream& os, Fraction& m) 
 {
    os << m.returnFractionAsString() ;
    return os;
+}
+
+istream& operator>>(istream& is, Fraction& m)
+{
+   string inp;
+   is >> inp;
+
+   if(!m.validFractionInput(inp))
+   
+   {
+      throw runtime_error("\nEnter Valid Fraction!\nPlease enter a fraction of type p/q, where p and q are integers\nKeep in mind denominator cannot be zero.");
+   }
+
+   m.convertStringToFraction(inp);
+
+   return is;
+
 }
 
